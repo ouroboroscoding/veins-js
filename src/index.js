@@ -256,8 +256,10 @@ export default class Veins {
         //	the tracking list will be sent as messages
         // }
         // Return the unsubscribe
-        return () => {
-            this.unsubscribe(key, callback);
+        return {
+            unsubscribe: () => {
+                return this.unsubscribe(key, callback);
+            }
         };
     }
     /**

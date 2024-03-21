@@ -328,8 +328,10 @@ export default class Veins {
 		// }
 
 		// Return the unsubscribe
-		return () => {
-			this.unsubscribe(key, callback);
+		return {
+			unsubscribe: () => {
+				return this.unsubscribe(key, callback);
+			}
 		}
 	}
 

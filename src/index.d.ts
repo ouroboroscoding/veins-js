@@ -106,7 +106,9 @@ export default class Veins {
      * @param callback The callback for any messages of the key value
      * @return void
      */
-    subscribe(key: string, callback: messageCallback): () => void;
+    subscribe(key: string, callback: messageCallback): {
+        unsubscribe: () => boolean;
+    };
     /**
      * Untrack
      *
